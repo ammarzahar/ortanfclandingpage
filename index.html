@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortan FC | Malaysia's Premier Youth Football Academy</title>
+    <meta name="description"
+        content="Join Ortan FC, the leading football academy in Malaysia with 25 branches. Training for kids aged 4-16. Register today!">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <!-- Importing Saira (match for Gefika's sporty vibe) and Outfit (match for Garet's geometric vibe) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Saira:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Markdown Parser for AI responses -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#D4A017', // Dark Yellow
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: '#1a1a1a'
+                        }
+                    },
+                    fontFamily: {
+                        // 'Outfit' is the fallback for 'Garet'
+                        sans: ['Garet', 'Outfit', 'sans-serif'],
+                        // 'Saira' is the fallback for 'Gefika'
+                        display: ['Gefika', 'Saira', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'Gefika';
+            src: url('fonts/Gefika.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D4A017;
+            border-radius: 5px;
+        }
+
+        /* Hero Overlay Gradient */
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%);
+        }
+
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Markdown Styles for AI Output */
+        .prose-invert strong {
+            color: #D4A017;
+        }
+
+        .prose-invert ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prose-invert ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prose-invert h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .prose-invert p {
+            margin-bottom: 0.75rem;
+            color: #d1d5db;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-black/95 backdrop-blur-sm border-b border-brand-yellow/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="images/Logo Ortan.svg" alt="Ortan FC Logo"
+                        class="h-20 w-auto hover:scale-105 transition transform duration-300">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#programs"
+                            class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Programs</a>
+                        <a href="#branches"
+                            class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Locations</a>
+                        <a href="#ai-zone"
+                            class="text-brand-yellow hover:text-white px-3 py-2 font-semibold transition"><i
+                                class="fas fa-robot mr-1"></i> AI Coach</a>
+                        <a href="#schedule"
+                            class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Schedule</a>
+                        <a href="#fees"
+                            class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Fees</a>
+                        <a href="#register"
+                            class="bg-brand-yellow text-brand-black px-6 py-2 rounded-full font-bold hover:bg-white hover:text-brand-black transition transform hover:scale-105">JOIN
+                            NOW</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button onclick="toggleMenu()"
+                        class="text-white hover:text-brand-yellow inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-black border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#programs" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Programs</a>
+                <a href="#branches" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Locations</a>
+                <a href="#ai-zone" onclick="toggleMenu()"
+                    class="text-brand-yellow hover:text-white block px-3 py-2 font-bold text-lg">AI Coach</a>
+                <a href="#fees" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Fees</a>
+                <a href="#register" onclick="toggleMenu()"
+                    class="bg-brand-yellow text-brand-black block px-3 py-3 rounded-md font-bold text-lg mt-4">JOIN
+                    NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-start">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Kids playing football" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16">
+            <div class="md:w-2/3 lg:w-1/2">
+                <div
+                    class="inline-block bg-brand-yellow text-brand-black font-bold px-4 py-1 rounded-sm mb-4 uppercase tracking-wider text-sm">
+                    #1 Football Academy in Malaysia
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6 uppercase">
+                    Forge Future <br><span class="text-brand-yellow">Champions</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 font-light">
+                    Building character, discipline, and elite football skills. Open for boys and girls aged <span
+                        class="text-white font-bold">4-16 years old</span>.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#register"
+                        class="bg-brand-yellow text-brand-black px-8 py-4 rounded font-bold text-lg text-center hover:bg-white transition transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        Book Free Trial
+                    </a>
+                    <a href="#ai-zone"
+                        class="border-2 border-white text-white px-8 py-4 rounded font-bold text-lg text-center hover:bg-white hover:text-brand-black transition">
+                        Try AI Coach
+                    </a>
+                </div>
+
+                <div class="mt-12 flex items-center gap-8 text-white/80">
+                    <div>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">25+</span>
+                        <span class="text-sm uppercase font-sans">Branches</span>
+                    </div>
+                    <div class="w-px h-10 bg-gray-500"></div>
+                    <div>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">1500+</span>
+                        <span class="text-sm uppercase font-sans">Players</span>
+                    </div>
+                    <div class="w-px h-10 bg-gray-500"></div>
+                    <div>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">4-16</span>
+                        <span class="text-sm uppercase font-sans">Ages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Ortan FC (USP) -->
+    <section class="py-20 bg-brand-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">The <span
+                        class="text-brand-yellow">Ortan</span> Way</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">More than just football. We develop athletes with strong
+                    character and winning mentalities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- USP 1 -->
+                <div
+                    class="bg-brand-gray p-8 rounded-lg border-l-4 border-brand-yellow hover:bg-gray-800 transition group">
+                    <div
+                        class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-certificate text-2xl text-brand-yellow group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">Certified Coaches</h3>
+                    <p class="text-gray-400">All coaches are FAM/AFC certified, ensuring your child learns the correct
+                        techniques safely.</p>
+                </div>
+                <!-- USP 2 -->
+                <div
+                    class="bg-brand-gray p-8 rounded-lg border-l-4 border-brand-yellow hover:bg-gray-800 transition group">
+                    <div
+                        class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-map-marker-alt text-2xl text-brand-yellow group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">25 Locations</h3>
+                    <p class="text-gray-400">We are the most accessible academy in Malaysia. There's an Ortan ground
+                        near you.</p>
+                </div>
+                <!-- USP 3 -->
+                <div
+                    class="bg-brand-gray p-8 rounded-lg border-l-4 border-brand-yellow hover:bg-gray-800 transition group">
+                    <div
+                        class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-users text-2xl text-brand-yellow group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">Pathway to Pro</h3>
+                    <p class="text-gray-400">Structured development programs that have sent talents to state and
+                        national youth leagues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW GEMINI AI SECTION -->
+    <section id="ai-zone" class="py-20 bg-gray-900 text-white relative overflow-hidden border-t border-brand-yellow">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-yellow blur-[100px] opacity-10 rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-brand-yellow/20 text-brand-yellow text-sm font-bold mb-4 border border-brand-yellow/50">POWERED
+                    BY GEMINI AI</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">AI Training <span
+                        class="text-brand-yellow">Zone</span></h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Experience the future of coaching. Get personalized drills or
+                    ask our AI coach for advice instantly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Feature 1: Drill Generator -->
+                <div
+                    class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-yellow transition duration-300 shadow-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-brand-yellow flex items-center justify-center text-brand-black text-2xl">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold">Drill Generator</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 mb-1">Age Group</label>
+                                <select id="ai-age"
+                                    class="w-full bg-gray-900 border border-gray-600 rounded p-2 text-white focus:border-brand-yellow focus:outline-none">
+                                    <option value="6">6 Years (Tiny)</option>
+                                    <option value="10" selected>10 Years (Junior)</option>
+                                    <option value="14">14 Years (Youth)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 mb-1">Position</label>
+                                <select id="ai-position"
+                                    class="w-full bg-gray-900 border border-gray-600 rounded p-2 text-white focus:border-brand-yellow focus:outline-none">
+                                    <option value="Striker">Striker</option>
+                                    <option value="Midfielder">Midfielder</option>
+                                    <option value="Defender">Defender</option>
+                                    <option value="Goalkeeper">Goalkeeper</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 mb-1">Focus Area (e.g., Speed,
+                                Shooting)</label>
+                            <input type="text" id="ai-focus" placeholder="e.g. Dribbling control"
+                                class="w-full bg-gray-900 border border-gray-600 rounded p-2 text-white focus:border-brand-yellow focus:outline-none">
+                        </div>
+
+                        <button onclick="generateDrills()"
+                            class="w-full bg-brand-yellow text-brand-black font-bold py-3 rounded hover:bg-white transition flex items-center justify-center gap-2 group">
+                            <i class="fas fa-bolt group-hover:animate-pulse"></i> Generate Plan ✨
+                        </button>
+                    </div>
+
+                    <!-- Output Area -->
+                    <div id="drill-output"
+                        class="mt-6 bg-gray-900 rounded p-4 border border-gray-700 min-h-[150px] hidden">
+                        <div class="prose-invert text-sm" id="drill-content"></div>
+                    </div>
+                    <!-- Loading State -->
+                    <div id="drill-loading" class="mt-6 hidden text-center py-8">
+                        <i class="fas fa-circle-notch fa-spin text-brand-yellow text-3xl"></i>
+                        <p class="text-gray-400 text-sm mt-2">Coach Ortan AI is thinking...</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Ask Coach AI -->
+                <div
+                    class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-yellow transition duration-300 shadow-2xl flex flex-col">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-brand-black text-2xl">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold">Ask "Coach Ortan"</h3>
+                    </div>
+
+                    <div class="flex-grow flex flex-col space-y-4">
+                        <div id="chat-history"
+                            class="bg-gray-900 rounded-lg p-4 h-64 overflow-y-auto border border-gray-700 space-y-4 text-sm">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center text-black font-bold text-xs">
+                                    AI</div>
+                                <div class="bg-gray-800 p-3 rounded-lg rounded-tl-none text-gray-300">
+                                    Hi! I'm Coach Ortan AI. Ask me about training tips, nutrition, or academy rules!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mt-auto">
+                            <input type="text" id="chat-input" placeholder="Ask a question..."
+                                class="flex-grow bg-gray-900 border border-gray-600 rounded p-3 text-white focus:border-brand-yellow focus:outline-none"
+                                onkeypress="handleChatEnter(event)">
+                            <button onclick="sendChatMessage()"
+                                class="bg-white text-brand-black px-4 rounded font-bold hover:bg-brand-yellow transition">
+                                <i class="fas fa-paper-plane"></i> ✨
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Groups -->
+    <section id="programs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-black uppercase">Programs By <span
+                        class="text-brand-yellow">Age</span></h2>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Grassroots -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold font-display uppercase">Tiny Tots</h3>
+                            <span class="bg-brand-black text-brand-yellow px-3 py-1 text-sm font-bold rounded">4-6
+                                YRS</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Focus on motor skills, fun, coordination, and falling in love with
+                            the ball.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Fun-based games</li>
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Basic coordination</li>
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Social interaction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Development -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform md:-translate-y-4 border-b-4 border-brand-yellow">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold font-display uppercase">Juniors</h3>
+                            <span class="bg-brand-black text-brand-yellow px-3 py-1 text-sm font-bold rounded">7-11
+                                YRS</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Mastering technical skills: passing, dribbling, shooting, and
+                            basic positioning.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Ball mastery</li>
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> 1v1 situations</li>
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Small-sided games</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Youth -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600250395178-40fe7529849e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold font-display uppercase">Youth Elite</h3>
+                            <span class="bg-brand-black text-brand-yellow px-3 py-1 text-sm font-bold rounded">12-16
+                                YRS</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Tactical awareness, physical conditioning, and competitive league
+                            play.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Tactical understanding</li>
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Strength & Conditioning</li>
+                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Tournament exposure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches & Map Placeholder -->
+    <section id="branches" class="py-20 bg-brand-black text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Text Content -->
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-display font-bold mb-6 uppercase">We Are <span
+                            class="text-brand-yellow">Everywhere</span></h2>
+                    <p class="text-gray-400 mb-8 text-lg">With 25 strategic locations across Malaysia, elite football
+                        training is never far from home.</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i
+                                    class="fas fa-map-pin mr-2"></i>Klang
+                                Valley (Central)</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Shah Alam (HQ), Subang Jaya, Petaling Jaya, KLCC, Ampang, Cheras, Bangi, Puchong,
+                                Damansara, Setia Alam.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i
+                                    class="fas fa-map-pin mr-2"></i>Northern Region</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Penang Island, Butterworth, Ipoh, Taiping, Alor Setar.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i
+                                    class="fas fa-map-pin mr-2"></i>Southern Region</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Johor Bahru (2 branches), Melaka, Seremban.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i class="fas fa-map-pin mr-2"></i>East
+                                Coast & Borneo</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Kuantan, Kota Bharu, Kuching, Kota Kinabalu.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button
+                        class="mt-8 bg-white text-brand-black px-6 py-3 rounded font-bold hover:bg-brand-yellow transition w-full md:w-auto">
+                        <i class="fas fa-search-location mr-2"></i> Locate Nearest Academy
+                    </button>
+                </div>
+
+                <!-- Visual Element (Stylized Map representation) -->
+                <div
+                    class="md:w-1/2 bg-gray-800 rounded-lg p-4 flex items-center justify-center relative overflow-hidden">
+                    <!-- Placeholder for Map -->
+                    <div
+                        class="absolute inset-0 opacity-20 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Map_of_Malaysia_%28Blank%29.svg/2560px-Map_of_Malaysia_%28Blank%29.svg.png')] bg-center bg-contain bg-no-repeat">
+                    </div>
+                    <div class="relative z-10 text-center">
+                        <i class="fas fa-location-dot text-brand-yellow text-6xl mb-4 animate-bounce"></i>
+                        <h3 class="text-2xl font-bold font-display uppercase">25 Active Hubs</h3>
+                        <p class="text-gray-400">Covering 10 States</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule & Fees -->
+    <section id="fees" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Schedule -->
+                <div>
+                    <h2 class="text-4xl font-display font-bold text-black mb-6 uppercase">Training <span
+                            class="text-brand-yellow">Schedule</span></h2>
+                    <p class="text-gray-600 mb-8">Sessions are held on weekends to accommodate school schedules. Each
+                        session is 90 minutes.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-black">
+                            <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SAT</div>
+                            <div class="ml-4">
+                                <div class="font-bold text-black">Morning Session</div>
+                                <div class="text-sm text-gray-600">8:00 AM - 9:30 AM (All Ages)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-black">
+                            <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SAT</div>
+                            <div class="ml-4">
+                                <div class="font-bold text-black">Evening Session</div>
+                                <div class="text-sm text-gray-600">5:00 PM - 6:30 PM (Juniors & Youth)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-brand-yellow">
+                            <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SUN</div>
+                            <div class="ml-4">
+                                <div class="font-bold text-black">Morning Session</div>
+                                <div class="text-sm text-gray-600">8:00 AM - 9:30 AM (All Ages)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fees -->
+                <div>
+                    <h2 class="text-4xl font-display font-bold text-black mb-6 uppercase">Academy <span
+                            class="text-brand-yellow">Fees</span></h2>
+                    <div class="bg-brand-black text-white rounded-2xl p-8 shadow-xl relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 bg-brand-yellow text-black font-bold px-4 py-1 text-xs uppercase rounded-bl-lg">
+                            Popular</div>
+                        <div class="mb-6">
+                            <span class="text-gray-400 text-sm uppercase tracking-wide">Monthly Membership</span>
+                            <div class="flex items-baseline mt-2">
+                                <span class="text-5xl font-display font-bold text-brand-yellow">RM 150</span>
+                                <span class="text-gray-400 ml-2">/ month</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i> 4
+                                to 8 Sessions per month</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i>
+                                Qualified Coaching Staff</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i>
+                                Access to all 25 branches</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i>
+                                Quarterly Evaluation Report</li>
+                        </ul>
+                        <div class="border-t border-gray-700 pt-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-sm">One-time Registration</span>
+                                <span class="font-bold">RM 100</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="text-sm">Jersey Kit (Home & Away)</span>
+                                <span class="font-bold">RM 120</span>
+                            </div>
+                            <a href="#register"
+                                class="block w-full bg-brand-yellow text-brand-black text-center font-bold py-3 rounded hover:bg-white transition">REGISTER
+                                NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-display font-bold text-center mb-12 uppercase">Parents <span
+                    class="text-brand-yellow">Love Us</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="text-brand-yellow mb-4 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">"My son used to be shy. 6 months at Ortan FC and his confidence
+                        has skyrocketed. The coaches are firm but encouraging."</p>
+                    <div class="font-bold text-black">- Sarah L., Shah Alam</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="text-brand-yellow mb-4 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">"The training structure is professional. It's not just kicking
+                        a ball around; they actually teach tactics and discipline."</p>
+                    <div class="font-bold text-black">- Razak A., Johor Bahru</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="text-brand-yellow mb-4 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">"Love that I can bring my kid to the Penang branch when we
+                        'balik kampung' without extra fees. Great flexibility!"</p>
+                    <div class="font-bold text-black">- Mei Ling, Subang Jaya</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration CTA -->
+    <section id="register" class="py-20 bg-brand-yellow relative overflow-hidden">
+        <div
+            class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+        </div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-5xl font-display font-bold text-brand-black mb-4 uppercase">Ready To Play?</h2>
+            <p class="text-brand-black text-xl mb-10 font-semibold">Join 1500+ kids across Malaysia. First session is on
+                us!</p>
+            <div class="flex flex-col items-center justify-center mt-12">
+                <a href="https://my.ortan.app/register" target="_blank"
+                    class="group bg-brand-black text-brand-yellow font-bold text-2xl px-12 py-6 rounded-lg hover:bg-white hover:text-brand-black transition duration-300 transform hover:-translate-y-1 shadow-2xl flex items-center gap-4">
+                    <span>REGISTER NOW</span>
+                    <i class="fas fa-external-link-alt group-hover:rotate-45 transition-transform duration-300"></i>
+                </a>
+                <p class="mt-6 text-brand-black font-semibold opacity-75">You will be redirected to our secure portal:
+                    my.ortan.app</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-display font-bold text-center mb-8 uppercase">Frequently Asked <span
+                    class="text-brand-yellow">Questions</span></h2>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold list-none">
+                        <span>What should my child wear for the trial?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm">Comfortable sports attire (jersey/shorts), football boots
+                        (preferred) or sports shoes, and a water bottle.</p>
+                </details>
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold list-none">
+                        <span>Do you have classes if it rains?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm">Light rain continues. In case of heavy rain or lightning, we
+                        pause the session. If a session is cancelled completely, we provide a replacement class.</p>
+                </details>
+                <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold list-none">
+                        <span>Can girls join?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 text-sm">Absolutely! We are an inclusive academy with many girls
+                        training across our different age categories.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-white pt-12 pb-6 border-t border-brand-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="images/Logo Ortan.svg" alt="Ortan FC Logo" class="h-16 w-auto mb-4">
+                    <p class="text-gray-400 mt-4 text-sm leading-relaxed max-w-xs">
+                        Malaysia's fastest-growing grassroots football network. Developing people, creating players.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-yellow mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#programs" class="hover:text-white">Programs</a></li>
+                        <li><a href="#branches" class="hover:text-white">Locations</a></li>
+                        <li><a href="#fees" class="hover:text-white">Fees</a></li>
+                        <li><a href="#register" class="hover:text-white">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-yellow mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +60 3-5555 7890</li>
+                        <li><i class="fas fa-envelope mr-2"></i> admin@ortanfc.com</li>
+                        <li class="flex space-x-4 mt-4 text-xl">
+                            <a href="#" class="hover:text-brand-yellow"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="hover:text-brand-yellow"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="hover:text-brand-yellow"><i class="fab fa-tiktok"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+                &copy; <span id="year"></span> Ortan FC Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // ----------------------------------------
+        // GEMINI API INTEGRATION
+        // ----------------------------------------
+
+        const apiKey = ""; // Set at runtime by environment
+
+        async function callGeminiAPI(userPrompt, systemInstruction = "") {
+            const url =
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userPrompt }] }],
+                systemInstruction: { parts: [{ text: systemInstruction }] }
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`API Error: ${response.status}`);
+                const data = await response.json();
+                return data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                return "Sorry, I'm having trouble connecting to the locker room (server). Please try again later!";
+            }
+        }
+
+        // --- FEATURE 1: Drill Generator ---
+
+        async function generateDrills() {
+            const age = document.getElementById('ai-age').value;
+            const position = document.getElementById('ai-position').value;
+            const focus = document.getElementById('ai-focus').value || "general ball mastery";
+
+            const outputDiv = document.getElementById('drill-output');
+            const contentDiv = document.getElementById('drill-content');
+            const loader = document.getElementById('drill-loading');
+
+            // UI State: Loading
+            outputDiv.classList.add('hidden');
+            loader.classList.remove('hidden');
+
+            const systemPrompt = "You are an expert youth football (soccer) coach at Ortan FC. Your goal is to provide encouraging, safe, and effective training advice.";
+
+            const userPrompt = `Create a short, fun 3-step home training plan for a ${age}-year-old football player who plays as a ${position}. They want to improve their ${focus}. Format the response in Markdown. Keep it brief (under 150 words total). Structure it as: 1. Warm-up (1 sentence) 2. The Main Drill (2-3 sentences explaining what to do) 3. Cool Down Challenge (1 fun sentence). End with an encouraging sign-off like "See you at the academy!".`;
+
+            const result = await callGeminiAPI(userPrompt, systemPrompt);
+
+            // UI State: Success
+            loader.classList.add('hidden');
+            outputDiv.classList.remove('hidden');
+            contentDiv.innerHTML = marked.parse(result);
+        }
+
+        // --- FEATURE 2: Chat Bot ---
+
+        async function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatHistory = document.getElementById('chat-history');
+
+            // 1. Add User Message to UI
+            const userMsgHTML = `<div class="flex items-start gap-3 justify-end"><div class="bg-brand-yellow text-brand-black p-3 rounded-lg rounded-tr-none">${message}</div><div class="w-8 h-8 rounded-full bg-gray-600 flex-shrink-0 flex items-center justify-center text-white text-xs">YOU</div></div>`;
+            chatHistory.innerHTML += userMsgHTML;
+            input.value = '';
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            // 2. Add Loading Indicator
+            const loadingId = 'loading-' + Date.now();
+            const loadingHTML = `<div id="${loadingId}" class="flex items-start gap-3"><div class="w-8 h-8 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center text-black font-bold text-xs">AI</div><div class="bg-gray-800 p-3 rounded-lg rounded-tl-none text-gray-400 italic"><i class="fas fa-circle-notch fa-spin mr-2"></i>Analyzing...</div></div>`;
+            chatHistory.innerHTML += loadingHTML;
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            // 3. Call API
+            const systemPrompt = "You are 'Coach Ortan AI', a friendly, professional, and enthusiastic youth football coach for Ortan FC Academy in Malaysia. Answer questions about football rules, training tips, nutrition, or the academy. Keep answers short (under 3 sentences) and encouraging. If asked about registration, direct them to the 'Register' section.";
+            const result = await callGeminiAPI(message, systemPrompt);
+
+            // 4. Remove Loading & Add AI Response
+            document.getElementById(loadingId).remove();
+
+            const aiMsgHTML = `<div class="flex items-start gap-3"><div class="w-8 h-8 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center text-black font-bold text-xs">AI</div><div class="bg-gray-800 p-3 rounded-lg rounded-tl-none text-gray-300">${marked.parse(result)}</div></div>`;
+            chatHistory.innerHTML += aiMsgHTML;
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+
+        function handleChatEnter(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+    </script>
+</body>
+
+</html>
