@@ -133,9 +133,6 @@
                             class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Programs</a>
                         <a href="#branches"
                             class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Locations</a>
-                        <a href="#ai-zone"
-                            class="text-brand-yellow hover:text-white px-3 py-2 font-semibold transition"><i
-                                class="fas fa-robot mr-1"></i> AI Coach</a>
                         <a href="#schedule"
                             class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Schedule</a>
                         <a href="#fees"
@@ -163,8 +160,6 @@
                     class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Programs</a>
                 <a href="#branches" onclick="toggleMenu()"
                     class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Locations</a>
-                <a href="#ai-zone" onclick="toggleMenu()"
-                    class="text-brand-yellow hover:text-white block px-3 py-2 font-bold text-lg">AI Coach</a>
                 <a href="#fees" onclick="toggleMenu()"
                     class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Fees</a>
                 <a href="#register" onclick="toggleMenu()"
@@ -178,7 +173,7 @@
     <section class="relative h-screen flex items-center justify-start">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            <img src="images/DSC_1985.jpg"
                 alt="Kids playing football" class="w-full h-full object-cover">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
@@ -201,10 +196,6 @@
                     <a href="#register"
                         class="bg-brand-yellow text-brand-black px-8 py-4 rounded font-bold text-lg text-center hover:bg-white transition transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                         Book Free Trial
-                    </a>
-                    <a href="#ai-zone"
-                        class="border-2 border-white text-white px-8 py-4 rounded font-bold text-lg text-center hover:bg-white hover:text-brand-black transition">
-                        Try AI Coach
                     </a>
                 </div>
 
@@ -275,122 +266,7 @@
             </div>
         </div>
     </section>
-
-    <!-- NEW GEMINI AI SECTION -->
-    <section id="ai-zone" class="py-20 bg-gray-900 text-white relative overflow-hidden border-t border-brand-yellow">
-        <!-- Decoration -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-yellow blur-[100px] opacity-10 rounded-full"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12">
-                <span
-                    class="inline-block py-1 px-3 rounded-full bg-brand-yellow/20 text-brand-yellow text-sm font-bold mb-4 border border-brand-yellow/50">POWERED
-                    BY GEMINI AI</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">AI Training <span
-                        class="text-brand-yellow">Zone</span></h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Experience the future of coaching. Get personalized drills or
-                    ask our AI coach for advice instantly.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-                <!-- Feature 1: Drill Generator -->
-                <div
-                    class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-yellow transition duration-300 shadow-2xl">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-full bg-brand-yellow flex items-center justify-center text-brand-black text-2xl">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <h3 class="text-2xl font-display font-bold">Drill Generator</h3>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-400 mb-1">Age Group</label>
-                                <select id="ai-age"
-                                    class="w-full bg-gray-900 border border-gray-600 rounded p-2 text-white focus:border-brand-yellow focus:outline-none">
-                                    <option value="6">6 Years (Tiny)</option>
-                                    <option value="10" selected>10 Years (Junior)</option>
-                                    <option value="14">14 Years (Youth)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-400 mb-1">Position</label>
-                                <select id="ai-position"
-                                    class="w-full bg-gray-900 border border-gray-600 rounded p-2 text-white focus:border-brand-yellow focus:outline-none">
-                                    <option value="Striker">Striker</option>
-                                    <option value="Midfielder">Midfielder</option>
-                                    <option value="Defender">Defender</option>
-                                    <option value="Goalkeeper">Goalkeeper</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-400 mb-1">Focus Area (e.g., Speed,
-                                Shooting)</label>
-                            <input type="text" id="ai-focus" placeholder="e.g. Dribbling control"
-                                class="w-full bg-gray-900 border border-gray-600 rounded p-2 text-white focus:border-brand-yellow focus:outline-none">
-                        </div>
-
-                        <button onclick="generateDrills()"
-                            class="w-full bg-brand-yellow text-brand-black font-bold py-3 rounded hover:bg-white transition flex items-center justify-center gap-2 group">
-                            <i class="fas fa-bolt group-hover:animate-pulse"></i> Generate Plan ✨
-                        </button>
-                    </div>
-
-                    <!-- Output Area -->
-                    <div id="drill-output"
-                        class="mt-6 bg-gray-900 rounded p-4 border border-gray-700 min-h-[150px] hidden">
-                        <div class="prose-invert text-sm" id="drill-content"></div>
-                    </div>
-                    <!-- Loading State -->
-                    <div id="drill-loading" class="mt-6 hidden text-center py-8">
-                        <i class="fas fa-circle-notch fa-spin text-brand-yellow text-3xl"></i>
-                        <p class="text-gray-400 text-sm mt-2">Coach Ortan AI is thinking...</p>
-                    </div>
-                </div>
-
-                <!-- Feature 2: Ask Coach AI -->
-                <div
-                    class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-brand-yellow transition duration-300 shadow-2xl flex flex-col">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-brand-black text-2xl">
-                            <i class="fas fa-comment-dots"></i>
-                        </div>
-                        <h3 class="text-2xl font-display font-bold">Ask "Coach Ortan"</h3>
-                    </div>
-
-                    <div class="flex-grow flex flex-col space-y-4">
-                        <div id="chat-history"
-                            class="bg-gray-900 rounded-lg p-4 h-64 overflow-y-auto border border-gray-700 space-y-4 text-sm">
-                            <div class="flex items-start gap-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center text-black font-bold text-xs">
-                                    AI</div>
-                                <div class="bg-gray-800 p-3 rounded-lg rounded-tl-none text-gray-300">
-                                    Hi! I'm Coach Ortan AI. Ask me about training tips, nutrition, or academy rules!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 mt-auto">
-                            <input type="text" id="chat-input" placeholder="Ask a question..."
-                                class="flex-grow bg-gray-900 border border-gray-600 rounded p-3 text-white focus:border-brand-yellow focus:outline-none"
-                                onkeypress="handleChatEnter(event)">
-                            <button onclick="sendChatMessage()"
-                                class="bg-white text-brand-black px-4 rounded font-bold hover:bg-brand-yellow transition">
-                                <i class="fas fa-paper-plane"></i> ✨
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Age Groups -->
+ <!-- Age Groups -->
     <section id="programs" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
