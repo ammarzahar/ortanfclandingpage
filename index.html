@@ -22,6 +22,10 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Saira:wght@400;600;700;900&display=swap"
         rel="stylesheet">
 
+    <!-- Leaflet CSS (map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-sA+e2Yk3bP3yYhX8Z6b0s3sF3qkR5Zr2v+v+0i0S0Dk=" crossorigin="" />
+
     <!-- Markdown Parser for AI responses -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -194,18 +198,18 @@
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#register"
                         class="bg-brand-yellow text-brand-black px-8 py-4 rounded font-bold text-lg text-center hover:bg-white transition transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
-                        Book Free Trial
+                    Register NOW!<br>
                     </a>
                 </div>
 
                 <div class="mt-12 flex items-center gap-8 text-white/80">
                     <div>
-                        <span class="block text-3xl font-display font-bold text-brand-yellow">25+</span>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">30+</span>
                         <span class="text-sm uppercase font-sans">Branches</span>
                     </div>
                     <div class="w-px h-10 bg-gray-500"></div>
                     <div>
-                        <span class="block text-3xl font-display font-bold text-brand-yellow">1500+</span>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">500+</span>
                         <span class="text-sm uppercase font-sans">Players</span>
                     </div>
                     <div class="w-px h-10 bg-gray-500"></div>
@@ -237,8 +241,8 @@
                         <i class="fas fa-certificate text-2xl text-brand-yellow group-hover:text-black"></i>
                     </div>
                     <h3 class="text-2xl font-display font-bold mb-3 uppercase">Certified Coaches</h3>
-                    <p class="text-gray-400">All coaches are FAM/AFC certified, ensuring your child learns the correct
-                        techniques safely.</p>
+                    <p class="text-gray-400">All coaches are FAM/AFC certified or experienced coaches&nbsp; ensuring your child learns the correct
+                    techniques safely.</p>
                 </div>
                 <!-- USP 2 -->
                 <div
@@ -247,7 +251,7 @@
                         class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition">
                         <i class="fas fa-map-marker-alt text-2xl text-brand-yellow group-hover:text-black"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">25 Locations</h3>
+                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">30+ Locations</h3>
                     <p class="text-gray-400">We are the most accessible academy in Malaysia. There's an Ortan ground
                         near you.</p>
                 </div>
@@ -373,67 +377,29 @@
         </div>
     </section>
 
-    <!-- Branches & Map Placeholder -->
+    <!-- Branches & Map: updated list + interactive map -->
     <section id="branches" class="py-20 bg-brand-black text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row gap-12">
-                <!-- Text Content -->
+                <!-- Left: Branch list -->
                 <div class="md:w-1/2">
-                    <h2 class="text-4xl font-display font-bold mb-6 uppercase">We Are <span
-                            class="text-brand-yellow">Everywhere</span></h2>
-                    <p class="text-gray-400 mb-8 text-lg">With 25 strategic locations across Malaysia, elite football
-                        training is never far from home.</p>
+                    <h2 class="text-4xl font-display font-bold mb-6 uppercase">Cawangan <span
+                            class="text-brand-yellow">Ortan</span></h2>
+                    <p class="text-gray-400 mb-6 text-lg">Klik mana-mana cawangan untuk fokus pada peta. Peta akan
+                        cuba mendapatkan koordinat secara automatik.</p>
 
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i
-                                    class="fas fa-map-pin mr-2"></i>Klang
-                                Valley (Central)</h3>
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                Shah Alam (HQ), Subang Jaya, Petaling Jaya, KLCC, Ampang, Cheras, Bangi, Puchong,
-                                Damansara, Setia Alam.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i
-                                    class="fas fa-map-pin mr-2"></i>Northern Region</h3>
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                Penang Island, Butterworth, Ipoh, Taiping, Alor Setar.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i
-                                    class="fas fa-map-pin mr-2"></i>Southern Region</h3>
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                Johor Bahru (2 branches), Melaka, Seremban.
-                            </p>
-                        </div>
-                        <div>
-                            <h3 class="text-brand-yellow font-bold text-xl mb-2"><i class="fas fa-map-pin mr-2"></i>East
-                                Coast & Borneo</h3>
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                Kuantan, Kota Bharu, Kuching, Kota Kinabalu.
-                            </p>
-                        </div>
+                    <div class="bg-gray-900/50 p-6 rounded-lg">
+                        <ul id="branch-list" class="space-y-2 text-gray-200 text-sm list-inside">
+                            <!-- Branch items inserted by script -->
+                        </ul>
+                        <div id="geocode-status" class="mt-4 text-xs text-gray-400">Memulai pemetaan...</div>
                     </div>
-
-                    <button
-                        class="mt-8 bg-white text-brand-black px-6 py-3 rounded font-bold hover:bg-brand-yellow transition w-full md:w-auto">
-                        <i class="fas fa-search-location mr-2"></i> Locate Nearest Academy
-                    </button>
                 </div>
 
-                <!-- Visual Element (Stylized Map representation) -->
-                <div
-                    class="md:w-1/2 bg-gray-800 rounded-lg p-4 flex items-center justify-center relative overflow-hidden">
-                    <!-- Placeholder for Map -->
-                    <div
-                        class="absolute inset-0 opacity-20 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Map_of_Malaysia_%28Blank%29.svg/2560px-Map_of_Malaysia_%28Blank%29.svg.png')] bg-center bg-contain bg-no-repeat">
-                    </div>
-                    <div class="relative z-10 text-center">
-                        <i class="fas fa-location-dot text-brand-yellow text-6xl mb-4 animate-bounce"></i>
-                        <h3 class="text-2xl font-bold font-display uppercase">25 Active Hubs</h3>
-                        <p class="text-gray-400">Covering 10 States</p>
+                <!-- Right: Map -->
+                <div class="md:w-1/2">
+                    <div class="bg-gray-800 rounded-lg p-4 relative">
+                        <div id="map" class="w-full h-96 rounded-lg shadow-lg" style="min-height:360px;"></div>
                     </div>
                 </div>
             </div>
@@ -449,28 +415,28 @@
                     <h2 class="text-4xl font-display font-bold text-black mb-6 uppercase">Training <span
                             class="text-brand-yellow">Schedule</span></h2>
                     <p class="text-gray-600 mb-8">Sessions are held on weekends to accommodate school schedules. Each
-                        session is 90 minutes.</p>
+                    session is 120 minutes.</p>
 
                     <div class="space-y-4">
                         <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-black">
                             <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SAT</div>
                             <div class="ml-4">
                                 <div class="font-bold text-black">Morning Session</div>
-                                <div class="text-sm text-gray-600">8:00 AM - 9:30 AM (All Ages)</div>
+                                <div class="text-sm text-gray-600">8:00 AM - 10:00 AM</div>
                             </div>
                         </div>
                         <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-black">
                             <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SAT</div>
                             <div class="ml-4">
                                 <div class="font-bold text-black">Evening Session</div>
-                                <div class="text-sm text-gray-600">5:00 PM - 6:30 PM (Juniors & Youth)</div>
+                                <div class="text-sm text-gray-600">5:00 PM - 7:00 PM</div>
                             </div>
                         </div>
                         <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-brand-yellow">
                             <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SUN</div>
                             <div class="ml-4">
                                 <div class="font-bold text-black">Morning Session</div>
-                                <div class="text-sm text-gray-600">8:00 AM - 9:30 AM (All Ages)</div>
+                                <div class="text-sm text-gray-600">8:00 AM - 10:00 AM</div>
                             </div>
                         </div>
                     </div>
@@ -487,33 +453,33 @@
                         <div class="mb-6">
                             <span class="text-gray-400 text-sm uppercase tracking-wide">Monthly Membership</span>
                             <div class="flex items-baseline mt-2">
-                                <span class="text-5xl font-display font-bold text-brand-yellow">RM 150</span>
+                                <span class="text-5xl font-display font-bold text-brand-yellow">RM75</span>
                                 <span class="text-gray-400 ml-2">/ month</span>
                             </div>
                         </div>
                         <ul class="space-y-4 mb-8 text-gray-300">
                             <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i> 4
-                                to 8 Sessions per month</li>
+                            Sessions per month including league match</li>
                             <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i>
                                 Qualified Coaching Staff</li>
                             <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i>
-                                Access to all 25 branches</li>
+                                Access to all  branches nationwide</li>
                             <li class="flex items-center"><i class="fas fa-check-circle text-brand-yellow mr-3"></i>
                                 Quarterly Evaluation Report</li>
                         </ul>
                         <div class="border-t border-gray-700 pt-6">
                             <div class="flex justify-between items-center mb-4">
                                 <span class="text-sm">One-time Registration</span>
-                                <span class="font-bold">RM 100</span>
-                            </div>
+                                <span class="font-bold">RM85</span>
+                          </div>
                             <div class="flex justify-between items-center mb-6">
-                                <span class="text-sm">Jersey Kit (Home & Away)</span>
-                                <span class="font-bold">RM 120</span>
+                                <span class="text-sm">JerseyTraining</span>
+                                <span class="font-bold">FREE</span>
                             </div>
                             <a href="#register"
                                 class="block w-full bg-brand-yellow text-brand-black text-center font-bold py-3 rounded hover:bg-white transition">REGISTER
                                 NOW</a>
-                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -771,6 +737,119 @@
         function handleChatEnter(e) {
             if (e.key === 'Enter') sendChatMessage();
         }
+    </script>
+    <!-- Leaflet JS and geocoding/pinning script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7kI1YgMV+6Jk6m1VJ3z4wFvQv3Rtrr3h6v0f3I=" crossorigin=""></script>
+    <script>
+        // Branch list provided by user
+        const branchNames = [
+            "Ampang",
+            "Bangi",
+            "Bangsar",
+            "Batu Caves",
+            "Bayan Lepas",
+            "Bukit Jalil",
+            "Cheras",
+            "Cheras Perdana",
+            "Cyberjaya",
+            "Damansara",
+            "Ipoh",
+            "Iskandar Puteri",
+            "JB City",
+            "Kajang",
+            "Klang",
+            "Kota Tinggi",
+            "Kuantan",
+            "Petaling Jaya",
+            "Puchong",
+            "Puncak Alam",
+            "Putrajaya",
+            "Rawang",
+            "Sentul",
+            "Sepang",
+            "Seremban",
+            "Sg Buloh",
+            "Shah Alam",
+            "Shah Alam Seksyen U9",
+            "Subang",
+            "Taman Lestari Permai",
+            "Wangsa Maju"
+        ];
+
+        // Initialize Leaflet map centered on Malaysia
+        const map = L.map('map').setView([4.210484, 101.975766], 6);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        const markers = {}; // name -> marker
+
+        function addListItem(name, marker, lat, lon, found) {
+            const ul = document.getElementById('branch-list');
+            const li = document.createElement('li');
+            li.className = 'flex justify-between items-center';
+
+            const btn = document.createElement('button');
+            btn.className = 'text-left w-full hover:text-brand-yellow';
+            btn.textContent = name + (found ? ` — ${lat.toFixed(4)}, ${lon.toFixed(4)}` : ' — not found');
+            btn.onclick = () => {
+                if (marker) {
+                    marker.openPopup();
+                    map.setView(marker.getLatLng(), 14);
+                } else {
+                    alert(name + ' - lokasi tidak dijumpai pada peta.');
+                }
+            };
+
+            li.appendChild(btn);
+            ul.appendChild(li);
+        }
+
+        async function geocode(query, email) {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(query)}${email ? `&email=${encodeURIComponent(email)}` : ''}`;
+            const res = await fetch(url, { headers: { 'Accept-Language': 'en' } });
+            if (!res.ok) throw new Error('Geocode error');
+            const data = await res.json();
+            return (data && data[0]) ? data[0] : null;
+        }
+
+        (async function runGeocode() {
+            const status = document.getElementById('geocode-status');
+            status.textContent = 'Memetakan cawangan (sila tunggu — ini mungkin mengambil beberapa saat)...';
+
+            // Use an email parameter to be polite to Nominatim
+            const email = 'admin@ortanfc.com';
+
+            for (let i = 0; i < branchNames.length; i++) {
+                const name = branchNames[i];
+                try {
+                    // Prefer more specific query to reduce ambiguity
+                    const q = `${name}, Malaysia`;
+                    const res = await geocode(q, email);
+
+                    if (res) {
+                        const lat = parseFloat(res.lat);
+                        const lon = parseFloat(res.lon);
+                        const m = L.marker([lat, lon]).addTo(map).bindPopup(`<strong>${name}</strong><br>${lat.toFixed(5)}, ${lon.toFixed(5)}`);
+                        markers[name] = m;
+                        addListItem(name, m, lat, lon, true);
+                    } else {
+                        addListItem(name, null, 0, 0, false);
+                    }
+                } catch (err) {
+                    console.error('Geocode failed for', name, err);
+                    addListItem(name, null, 0, 0, false);
+                }
+
+                // Update status and be gentle with the public API (1.1s between requests)
+                status.textContent = `Mapped ${Math.min(i + 1, branchNames.length)} / ${branchNames.length}`;
+                await new Promise(r => setTimeout(r, 1100));
+            }
+
+            status.textContent = 'Pemetaan selesai.';
+        })();
     </script>
 </body>
 
