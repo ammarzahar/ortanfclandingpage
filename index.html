@@ -126,8 +126,8 @@
             <div class="flex items-center justify-between h-24">
                 <!-- Logo -->
                 <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img src="images/Logo Ortan.svg" alt="Ortan FC Logo"
-                        class="h-20 w-auto hover:scale-105 transition transform duration-300">
+                    <img src="images/LogoOrtan.svg" alt="Ortan FC Logo"
+                        class="h-10 w-auto hover:scale-105 transition transform duration-300">
                 </div>
 
                 <!-- Desktop Menu -->
@@ -269,138 +269,156 @@
             </div>
         </div>
     </section>
-    <!-- Age Groups -->
-    <section id="programs" class="py-20 bg-gray-50">
+	 <!-- Branches Section (Redesigned for Region Selection) -->
+    <section id="branches" class="py-20 md:py-28 bg-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-black uppercase">Programs By <span
-                        class="text-brand-yellow">Age</span></h2>
-                <div class="w-24 h-1 bg-brand-yellow mx-auto mt-4"></div>
+                <h3 class="text-base font-semibold text-brand-yellow uppercase tracking-wider mb-2">Find Training Near You
+                </h3>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white font-display">
+					Our Regional <span class="text-brand-yellow">Training Branches</span>
+                </h2>
+                <p class="mt-4 text-gray-300 max-w-xl mx-auto">Select a region to view all available branches, their locations, and training schedules.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Grassroots -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-2xl font-bold font-display uppercase">Tiny Tots</h3>
-                            <span class="bg-brand-black text-brand-yellow px-3 py-1 text-sm font-bold rounded">4-6
-                                YRS</span>
+            <!-- Region Selector (Tabs) -->
+            <div class="flex flex-wrap justify-center gap-3 mt-8" id="region-selectors" role="tablist" aria-label="Region selector">
+                <!-- Region buttons will be dynamically inserted here by JavaScript -->
+            </div>
+
+            <!-- Branch List Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10" id="branch-list-container">
+                <!-- Branch Cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+    <!-- Age Groups -->
+    <!-- Ortan Reels Section (replaces Programs By Age) -->
+    <section class="py-16 md:py-24 bg-black text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-display font-bold uppercase tracking-wide">
+                    Ortan <span class="text-brand-yellow">Reels</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-2">
+                    Catch the best moments, highlight plays, and player interviews from the league.
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Carousel Container -->
+                <div id="reels-carousel" class="overflow-x-auto p-2" tabindex="0" style="scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;">
+                    <!-- Carousel Track -->
+                    <div id="reels-track" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Reel Cards (Mock Data) -->
+                        <div class="reel-card flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[250px] lg:w-[300px] mx-4" style="scroll-snap-align:start;">
+                            <div class="h-[400px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:scale-[1.03] transition duration-300">
+                                <iframe src="https://www.youtube.com/embed/CkGKPBW761E?rel=0" class="w-full h-full" style="border:none;overflow:hidden;" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            <p class="text-sm mt-3 text-gray-300 font-semibold truncate text-center">&nbsp;</p>
                         </div>
-                        <p class="text-gray-600 mb-6">Focus on motor skills, fun, coordination, and falling in love with
-                            the ball.</p>
-                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Fun-based games</li>
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Basic coordination</li>
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Social interaction</li>
-                        </ul>
+                        
+                        <div class="reel-card flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[250px] lg:w-[300px] mx-4" style="scroll-snap-align:start;">
+                            <div class="h-[400px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:scale-[1.03] transition duration-300">
+                                <iframe src="https://www.youtube.com/embed/51YBBJ6SuM0?rel=0" class="w-full h-full" style="border:none;overflow:hidden;" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="reel-card flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[250px] lg:w-[300px] mx-4" style="scroll-snap-align:start;">
+                            <div class="h-[400px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:scale-[1.03] transition duration-300">
+                                <iframe src="https://www.instagram.com/reel/DNM2GUsyAJk/embed" class="w-full h-full" style="border:none;overflow:hidden;" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="reel-card flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[250px] lg:w-[300px] mx-4" style="scroll-snap-align:start;">
+                            <div class="h-[400px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:scale-[1.03] transition duration-300">
+                                <iframe src="https://www.tiktok.com/embed/v2/7468651343398440199" class="w-full h-full" style="border:none;overflow:hidden;" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="reel-card flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[250px] lg:w-[300px] mx-4" style="scroll-snap-align:start;">
+                            <div class="h-[400px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:scale-[1.03] transition duration-300">
+                                <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F503320406002014&show_text=0&width=560" class="w-full h-full" style="border:none;overflow:hidden;" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Development -->
-                <div
-                    class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform md:-translate-y-4 border-b-4 border-brand-yellow">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-2xl font-bold font-display uppercase">Juniors</h3>
-                            <span class="bg-brand-black text-brand-yellow px-3 py-1 text-sm font-bold rounded">7-11
-                                YRS</span>
-                        </div>
-                        <p class="text-gray-600 mb-6">Mastering technical skills: passing, dribbling, shooting, and
-                            basic positioning.</p>
-                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Ball mastery</li>
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> 1v1 situations</li>
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Small-sided games</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Youth -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600250395178-40fe7529849e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            class="w-full h-full object-cover transform hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-2xl font-bold font-display uppercase">Youth Elite</h3>
-                            <span class="bg-brand-black text-brand-yellow px-3 py-1 text-sm font-bold rounded">12-16
-                                YRS</span>
-                        </div>
-                        <p class="text-gray-600 mb-6">Tactical awareness, physical conditioning, and competitive league
-                            play.</p>
-                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Tactical understanding</li>
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Strength & Conditioning</li>
-                            <li><i class="fas fa-check text-brand-yellow mr-2"></i> Tournament exposure</li>
-                        </ul>
-                    </div>
-                </div>
+                <!-- Navigation Buttons -->
+                <button id="prev-reel" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 p-3 rounded-full shadow-lg hover:bg-brand-yellow hover:text-black transition duration-300 hidden md:block opacity-70 hover:opacity-100 z-20 ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button id="next-reel" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 p-3 rounded-full shadow-lg hover:bg-brand-yellow hover:text-black transition duration-300 hidden md:block opacity-70 hover:opacity-100 z-20 mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Liga Ortan Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-brand-yellow blur-[120px] opacity-10 rounded-full"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-yellow blur-[120px] opacity-10 rounded-full"></div>
+    <section class="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden font-sans">
+        <!-- Background Image (matches Hero pattern) -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/DSC_2167.jpg" alt="Liga Ortan background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <!-- Background Glow Effects -->
+        <div class="absolute top-0 left-0 w-80 h-80 bg-brand-yellow/30 blur-[100px] opacity-24 rounded-full"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-yellow/30 blur-[100px] opacity-12 rounded-full"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-8">
-                <h2 class="text-4xl md:text-6xl font-display font-bold mb-4 uppercase">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-5xl md:text-6xl font-display font-bold mb-4 tracking-tight uppercase">
                     Liga <span class="text-brand-yellow">Ortan</span>
                 </h2>
-                <p class="text-gray-300 max-w-3xl mx-auto text-lg">
-                    Play in the Liga Ortan every month.
+                <p class="text-white-400 max-w-4xl mx-auto text-lg font-light">
+                    The premier competitive environment designed to foster young football talent and reward excellence at every level.
                 </p>
+
+                <!-- Image placeholder under headline (keeps layout clean and consistent) -->
+                <img src="images/Logo Liga Ortan.svg" alt="Liga Ortan Logo"
+                    class="mx-auto w-full max-w-lg mt-10 mb-12"> 
             </div>
 
-            <div class="mb-8 flex justify-center">
-                <img src="images/Liga Ortan.png" alt="Liga Ortan"
-                    class="rounded-xl shadow-lg max-w-full h-auto border-4 border-brand-yellow/30">
-            </div>
-
-            <div class="text-center">
-                <p class="text-gray-300 max-w-3xl mx-auto text-lg">
-                    Lift the trophy every year and earn your medals when you become a champion at Ortan.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Branches & Map: updated list + interactive map -->
-    <section id="branches" class="py-20 bg-brand-black text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row gap-12">
-                <!-- Left: Branch list -->
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-display font-bold mb-6 uppercase">Cawangan <span
-                            class="text-brand-yellow">Ortan</span></h2>
-                    <p class="text-gray-400 mb-6 text-lg">Klik mana-mana cawangan untuk fokus pada peta. Peta akan
-                        cuba mendapatkan koordinat secara automatik.</p>
-
-                    <div class="bg-gray-900/50 p-6 rounded-lg">
-                        <ul id="branch-list" class="space-y-2 text-gray-200 text-sm list-inside">
-                            <!-- Branch items inserted by script -->
-                        </ul>
-                        <div id="geocode-status" class="mt-4 text-xs text-gray-400">Memulai pemetaan...</div>
+            <!-- Benefits Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-800/70 p-6 sm:p-8 rounded-2xl border border-gray-700 hover:border-brand-yellow/40 transition duration-300 shadow-xl backdrop-blur-sm">
+                    <div class="text-brand-yellow mb-4">
+                        <!-- users icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-12 0"/><circle cx="12" cy="11" r="6"/><path d="M15.73 3.65a9 9 0 1 0 4.7 13.9a1 1 0 0 0 1.25-.09c.47-.35.91-.77 1.3-1.22"/></svg>
                     </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-display">Inclusivity & Development</h3>
+                    <p class="text-gray-400">Open to all aspiring players aged 4 to 16, fostering young talent in a competitive environment.</p>
                 </div>
 
-                <!-- Right: Map -->
-                <div class="md:w-1/2">
-                    <div class="bg-gray-800 rounded-lg p-4 relative">
-                        <div id="map" class="w-full h-96 rounded-lg shadow-lg" style="min-height:360px;"></div>
+                <div class="bg-gray-800/70 p-6 sm:p-8 rounded-2xl border border-gray-700 hover:border-brand-yellow/40 transition duration-300 shadow-xl backdrop-blur-sm">
+                    <div class="text-brand-yellow mb-4">
+                        <!-- calendar icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
                     </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-display">Consistent Competition</h3>
+                    <p class="text-gray-400">Monthly tournaments ensure continuous engagement, high-level practice, and skill development throughout the year.</p>
+                </div>
+
+                <div class="bg-gray-800/70 p-6 sm:p-8 rounded-2xl border border-gray-700 hover:border-brand-yellow/40 transition duration-300 shadow-xl backdrop-blur-sm">
+                    <div class="text-brand-yellow mb-4">
+                        <!-- trophy icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14V2l3 2 3-2v12"/><path d="m10 14-3 5a3 3 0 0 0 2.2 5h6.6a3 3 0 0 0 2.2-5l-3-5"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-display">Coveted Recognition</h3>
+                    <p class="text-gray-400">Winning teams are awarded a prestigious championship trophy and commemorative medals.</p>
+                </div>
+
+                <div class="bg-gray-800/70 p-6 sm:p-8 rounded-2xl border border-gray-700 hover:border-brand-yellow/40 transition duration-300 shadow-xl backdrop-blur-sm">
+                    <div class="text-brand-yellow mb-4">
+                        <!-- award icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17.76 21l-5.76-4-5.76 4 2.283-8.11"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-display">Individual Excellence</h3>
+                    <p class="text-gray-400">The most outstanding participant is recognized with the highly sought-after Overall Best Player Award.</p>
                 </div>
             </div>
         </div>
@@ -437,6 +455,20 @@
                             <div class="ml-4">
                                 <div class="font-bold text-black">Morning Session</div>
                                 <div class="text-sm text-gray-600">8:00 AM - 10:00 AM</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-brand-yellow">
+                            <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SUN</div>
+                            <div class="ml-4">
+                                <div class="font-bold text-black">Midday Session</div>
+                                <div class="text-sm text-gray-600">11:00 AM - 1:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-gray-50 p-4 rounded-lg border-l-4 border-brand-yellow">
+                            <div class="w-16 text-center font-bold text-2xl text-brand-yellow font-display">SUN</div>
+                            <div class="ml-4">
+                                <div class="font-bold text-black">Evening Session</div>
+                                <div class="text-sm text-gray-600">5:00 PM - 7:00 PM</div>
                             </div>
                         </div>
                     </div>
@@ -530,8 +562,8 @@
         </div>
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
             <h2 class="text-5xl font-display font-bold text-brand-black mb-4 uppercase">Ready To Play?</h2>
-            <p class="text-brand-black text-xl mb-10 font-semibold">Join 1500+ kids across Malaysia. First session is on
-                us!</p>
+            <p class="text-brand-black text-xl mb-10 font-semibold">Join 500+ kids across Malaysia. First session is on
+            us!</p>
             <div class="flex flex-col items-center justify-center mt-12">
                 <a href="https://my.ortan.app/register" target="_blank"
                     class="group bg-brand-black text-brand-yellow font-bold text-2xl px-12 py-6 rounded-lg hover:bg-white hover:text-brand-black transition duration-300 transform hover:-translate-y-1 shadow-2xl flex items-center gap-4">
@@ -539,7 +571,7 @@
                     <i class="fas fa-external-link-alt group-hover:rotate-45 transition-transform duration-300"></i>
                 </a>
                 <p class="mt-6 text-brand-black font-semibold opacity-75">You will be redirected to our secure portal:
-                    my.ortan.app</p>
+                my.ortan.app/register</p>
             </div>
         </div>
     </section>
@@ -552,7 +584,7 @@
             <div class="space-y-4">
                 <details class="group bg-gray-50 p-4 rounded-lg cursor-pointer">
                     <summary class="flex justify-between items-center font-bold list-none">
-                        <span>What should my child wear for the trial?</span>
+                        <span>What should my child wear for the first session?</span>
                         <span class="transition group-open:rotate-180">
                             <i class="fas fa-chevron-down"></i>
                         </span>
@@ -589,7 +621,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
-                    <img src="images/Logo Ortan.svg" alt="Ortan FC Logo" class="h-16 w-auto mb-4">
+                    <img src="images/LogoOrtan.svg" alt="Ortan FC Logo" class="h-8 w-auto mb-4">
                     <p class="text-gray-400 mt-4 text-sm leading-relaxed max-w-xs">
                         Malaysia's fastest-growing grassroots football network. Developing people, creating players.
                     </p>
@@ -606,12 +638,12 @@
                 <div>
                     <h4 class="font-bold text-brand-yellow mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><i class="fas fa-phone mr-2"></i> +60 3-5555 7890</li>
-                        <li><i class="fas fa-envelope mr-2"></i> admin@ortanfc.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +60 10-3221678</li>
+                        <li><i class="fas fa-envelope mr-2"></i> &nbsp;ortanhq@gmail.com</li>
                         <li class="flex space-x-4 mt-4 text-xl">
-                            <a href="#" class="hover:text-brand-yellow"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="hover:text-brand-yellow"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="hover:text-brand-yellow"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.facebook.com/ortanfc/" class="hover:text-brand-yellow"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/ortanfc" class="hover:text-brand-yellow"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@ortanfc" class="hover:text-brand-yellow"><i class="fab fa-tiktok"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -738,117 +770,201 @@
             if (e.key === 'Enter') sendChatMessage();
         }
     </script>
-    <!-- Leaflet JS and geocoding/pinning script -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7kI1YgMV+6Jk6m1VJ3z4wFvQv3Rtrr3h6v0f3I=" crossorigin=""></script>
     <script>
-        // Branch list provided by user
+        // Branch names (original list)
         const branchNames = [
-            "Ampang",
-            "Bangi",
-            "Bangsar",
-            "Batu Caves",
-            "Bayan Lepas",
-            "Bukit Jalil",
-            "Cheras",
-            "Cheras Perdana",
-            "Cyberjaya",
-            "Damansara",
-            "Ipoh",
-            "Iskandar Puteri",
-            "JB City",
-            "Kajang",
-            "Klang",
-            "Kota Tinggi",
-            "Kuantan",
-            "Petaling Jaya",
-            "Puchong",
-            "Puncak Alam",
-            "Putrajaya",
-            "Rawang",
-            "Sentul",
-            "Sepang",
-            "Seremban",
-            "Sg Buloh",
-            "Shah Alam",
-            "Shah Alam Seksyen U9",
-            "Subang",
-            "Taman Lestari Permai",
-            "Wangsa Maju"
+            "Ampang","Bangi","Bangsar","Batu Caves","Bayan Lepas","Bukit Jalil","Cheras","Cheras Perdana","Cyberjaya","Damansara","Ipoh","Iskandar Puteri","JB City","Kajang","Klang","Kota Tinggi","Kuantan","Petaling Jaya","Puchong","Puncak Alam","Putrajaya","Rawang","Sentul","Sepang","Seremban","Sg Buloh","Shah Alam","Shah Alam Seksyen U9","Subang","Taman Lestari Permai","Wangsa Maju"
         ];
 
-        // Initialize Leaflet map centered on Malaysia
-        const map = L.map('map').setView([4.210484, 101.975766], 6);
+        // Use explicit state mapping and image flags for the requested states (including Johor)
+        const regions = [
+            { id: 'wilayah', name: 'Wilayah Persekutuan', flag: 'images/flag-wilayah.svg' },
+            { id: 'selangor', name: 'Selangor', flag: 'images/flag-selangor.svg' },
+            { id: 'pahang', name: 'Pahang', flag: 'images/flag-pahang.svg' },
+            { id: 'penang', name: 'Pulau Pinang', flag: 'images/flag-penang.svg' },
+            { id: 'johor', name: 'Johor', flag: 'images/flag-johor.svg' },
+            { id: 'melaka', name: 'Melaka', flag: 'images/flag-melaka.svg' }
+        ];
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
+        // Reverted: simple state -> branch name lists. Puncak Alam replaced with Uitm Puncak Alam.
+        const stateMap = {
+            wilayah: ["Bukit Jalil", "Putrajaya", "Wangsa Maju", "Sentul", "Bangsar"],
+            selangor: ["Ampang", "Bangi", "Cheras", "Cheras Perdana", "Cyberjaya", "Damansara", "Klang", "Petaling Jaya", "Puchong", "Puncak Alam", "Rawang", "Shah Alam", "Shah Alam Seksyen U9", "Subang", "Sg Buloh", "Seri Kembangan", "Kajang", "Sepang"],
+            pahang: ["Kuantan"],
+            penang: ["Bayan Lepas"],
+            johor: ["JB City","Iskandar Puteri","Kota Tinggi","Masai"],
+            melaka: ["Bukit Katil"]
+        };
 
-        const markers = {}; // name -> marker
-
-        function addListItem(name, marker, lat, lon, found) {
-            const ul = document.getElementById('branch-list');
-            const li = document.createElement('li');
-            li.className = 'flex justify-between items-center';
-
-            const btn = document.createElement('button');
-            btn.className = 'text-left w-full hover:text-brand-yellow';
-            btn.textContent = name + (found ? ` — ${lat.toFixed(4)}, ${lon.toFixed(4)}` : ' — not found');
-            btn.onclick = () => {
-                if (marker) {
-                    marker.openPopup();
-                    map.setView(marker.getLatLng(), 14);
-                } else {
-                    alert(name + ' - lokasi tidak dijumpai pada peta.');
-                }
-            };
-
-            li.appendChild(btn);
-            ul.appendChild(li);
+        // Build branches array from the simple lists. Use region only — no addresses or schedules here.
+        const branches = [];
+        for (const [stateId, names] of Object.entries(stateMap)) {
+            names.forEach(n => {
+                // replace Puncak Alam to the exact label requested
+                const label = n === 'Puncak Alam' ? 'Uitm Puncak Alam' : n;
+                branches.push({ name: label, region: stateId });
+            });
         }
 
-        async function geocode(query, email) {
-            const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(query)}${email ? `&email=${encodeURIComponent(email)}` : ''}`;
-            const res = await fetch(url, { headers: { 'Accept-Language': 'en' } });
-            if (!res.ok) throw new Error('Geocode error');
-            const data = await res.json();
-            return (data && data[0]) ? data[0] : null;
+        // Metadata (addresses and schedules) for branches when available.
+        // These follow the exact location and schedule list you provided.
+        const branchMetadata = {
+            'Klang': { address: 'Padang Taman Selatan', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Bukit Jalil': { address: 'Pusat Komuniti Sri Petaling', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Putrajaya': { address: 'Padang Bola Presint 9', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Shah Alam': { address: 'Padang Bola Seksyen 7', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Cheras Perdana': { address: 'Padang Bola CP5', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Batu Caves': { address: 'Padang Bola Taman Pinggiran', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Ampang': { address: 'Padang Bola Taman Kosas', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Sg Buloh': { address: 'Padang Bola Hillpark', schedule: 'Sat 8:00 AM - 10:00 AM' },
+
+            'Sentul': { address: 'Padang Dewan Komuniti Batu Muda', schedule: 'Sat 5:00 PM - 7:00 PM' },
+            'Puchong': { address: 'Padang Bola Puchong Indah', schedule: 'Sat 5:00 PM - 7:00 PM' },
+            'Damansara': { address: 'Padang Bola Rahim Kajai TTDI', schedule: 'Sat 5:00 PM - 7:00 PM' },
+            'Bangi': { address: 'One Tiger Arena Kajang', schedule: 'Sat 5:00 PM - 7:00 PM' },
+            'Cyberjaya': { address: 'Padang Laman View', schedule: 'Sat 5:00 PM - 7:00 PM' },
+
+            'Seri Kembangan': { address: 'Taman Lestari Permai', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Shah Alam Seksyen U9': { address: 'Padang Bola Sunway Kayangan', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Shah Alam (Sek 7)': { address: 'Padang Bola Seksyen 7', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Rawang': { address: 'Padang Jalan Velox', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Subang': { address: 'Padang Bola SS15', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Subang Jaya': { address: 'Padang Bola SS15', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Wangsa Maju': { address: 'SK 2 Taman Keramat', schedule: 'Sun 8:00 AM - 10:00 AM' },
+            'Sepang': { address: 'Padang Bola Taman Mawar 2', schedule: 'Sun 8:00 AM - 10:00 AM' },
+
+            'Kajang': { address: 'One Tiger Arena', schedule: 'Sun 11:00 AM - 1:00 PM' },
+            'Petaling Jaya': { address: 'Padang Jalan Gasing', schedule: 'Sat 8:00 AM - 10:00 AM' },
+
+            'Cheras': { address: 'Kompleks Sukan Desa Tasek', schedule: 'Sun 5:00 PM - 7:00 PM' },
+            'Uitm Puncak Alam': { address: 'UITM Puncak Alam', schedule: 'Sun 5:00 PM - 7:00 PM' },
+            'Bangsar': { address: 'Kompleks Sukan Bangsar', schedule: 'Sun 5:00 PM - 7:00 PM' },
+
+            // Newly added metadata
+            'Kuantan': { address: 'Padang Tmn Inderapura', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Masai': { address: 'Padang Bola Jln Harmoni', schedule: 'Sat 8:00 AM - 10:00 AM' },
+            'Bukit Katil': { address: 'Drago Arena', schedule: 'Sat 8:00 AM - 10:00 AM' }
+            
+        };
+
+        // Render region buttons (using image flags)
+        function renderRegionSelectors() {
+            const container = document.getElementById('region-selectors');
+            container.innerHTML = '';
+            regions.forEach(r => {
+                const btn = document.createElement('button');
+                btn.className = 'flex items-center gap-3 px-4 py-2 rounded-full text-sm font-semibold bg-gray-800/50 hover:bg-brand-yellow/90 hover:text-black transition';
+                btn.setAttribute('data-region', r.id);
+                btn.setAttribute('role', 'tab');
+                btn.innerHTML = `<img src="${r.flag}" alt="${r.name} flag" class="w-6 h-6 object-contain rounded-sm"> <span>${r.name}</span>`;
+                btn.onclick = () => {
+                    document.querySelectorAll('#region-selectors button').forEach(b => b.classList.remove('ring-4','ring-brand-yellow','bg-brand-yellow','text-black'));
+                    btn.classList.add('bg-brand-yellow','text-black');
+                    renderBranchCards(r.id);
+                };
+                container.appendChild(btn);
+            });
+
+            // Activate the first state by default
+            const first = container.querySelector('button');
+            if (first) { first.classList.add('bg-brand-yellow','text-black'); }
         }
 
-        (async function runGeocode() {
-            const status = document.getElementById('geocode-status');
-            status.textContent = 'Memetakan cawangan (sila tunggu — ini mungkin mengambil beberapa saat)...';
+        // Render branch cards for a region (only mapped branches are considered)
+        function renderBranchCards(regionId) {
+            const container = document.getElementById('branch-list-container');
+            container.innerHTML = '';
 
-            // Use an email parameter to be polite to Nominatim
-            const email = 'admin@ortanfc.com';
+            const filtered = branches.filter(b => b.region === regionId);
 
-            for (let i = 0; i < branchNames.length; i++) {
-                const name = branchNames[i];
-                try {
-                    // Prefer more specific query to reduce ambiguity
-                    const q = `${name}, Malaysia`;
-                    const res = await geocode(q, email);
-
-                    if (res) {
-                        const lat = parseFloat(res.lat);
-                        const lon = parseFloat(res.lon);
-                        const m = L.marker([lat, lon]).addTo(map).bindPopup(`<strong>${name}</strong><br>${lat.toFixed(5)}, ${lon.toFixed(5)}`);
-                        markers[name] = m;
-                        addListItem(name, m, lat, lon, true);
-                    } else {
-                        addListItem(name, null, 0, 0, false);
-                    }
-                } catch (err) {
-                    console.error('Geocode failed for', name, err);
-                    addListItem(name, null, 0, 0, false);
-                }
-
-                // Update status and be gentle with the public API (1.1s between requests)
-                status.textContent = `Mapped ${Math.min(i + 1, branchNames.length)} / ${branchNames.length}`;
-                await new Promise(r => setTimeout(r, 1100));
+            if (filtered.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center text-gray-300">No branches found in this state.</div>`;
+                return;
             }
 
-            status.textContent = 'Pemetaan selesai.';
+            filtered.forEach(b => {
+                const regionInfo = regions.find(rr => rr.id === b.region) || regions[0];
+                const meta = branchMetadata[b.name];
+
+                const card = document.createElement('div');
+                card.className = 'group bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition-transform transform hover:-translate-y-1 cursor-pointer ring-0 ring-offset-2';
+                card.setAttribute('role','button');
+                card.setAttribute('tabindex','0');
+
+                // use safe values
+                const addressText = meta ? meta.address : `Location: ${b.name}, Malaysia`;
+                const scheduleText = meta ? meta.schedule : '';
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="${regionInfo.flag}" alt="${regionInfo.name} flag" class="w-8 h-6 object-contain rounded-sm"/>
+                            <div>
+                                <h4 class="text-xl font-bold text-white leading-tight">${b.name}</h4>
+                                <p class="text-sm text-gray-300 mt-1">${addressText}</p>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-300 text-right hidden md:block">
+                            ${scheduleText ? `<div class="text-sm text-gray-300 mb-1">${scheduleText}</div>` : ''}
+                            <div class="text-xs text-gray-400">Click for details</div>
+                        </div>
+                    </div>
+
+                    <div class="branch-details mt-4 pt-4 border-t border-gray-700 hidden">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-300">${addressText}</div>
+                            ${scheduleText ? `<div class="text-sm text-brand-yellow font-bold">${scheduleText}</div>` : ''}
+                        </div>
+                        <div class="mt-3 flex items-center gap-3">
+                            <a class="directions inline-flex items-center gap-2 px-3 py-2 bg-brand-yellow text-black rounded font-semibold text-sm" target="_blank" rel="noopener">Get Directions</a>
+                            <button class="copy-address px-3 py-2 rounded border border-gray-700 text-gray-300 text-sm">Copy Address</button>
+                        </div>
+                    </div>
+                `;
+
+                // attach events for accessibility and interaction
+                card.addEventListener('click', () => {
+                    const details = card.querySelector('.branch-details');
+                    details.classList.toggle('hidden');
+                    card.classList.toggle('ring-4');
+                    card.classList.toggle('ring-brand-yellow');
+                });
+
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+                });
+
+                // after append, wire up directions & copy
+                container.appendChild(card);
+
+                // set directions href
+                const directions = card.querySelector('.directions');
+                if (directions) {
+                    const q = encodeURIComponent(meta ? `${meta.address}, ${b.name}, Malaysia` : `${b.name}, Malaysia`);
+                    directions.href = `https://www.google.com/maps/search/?api=1&query=${q}`;
+                }
+
+                const copyBtn = card.querySelector('.copy-address');
+                if (copyBtn) {
+                    copyBtn.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        const text = meta ? `${meta.address}, ${b.name}, Malaysia` : `${b.name}, Malaysia`;
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            navigator.clipboard.writeText(text).then(() => {
+                                copyBtn.textContent = 'Copied';
+                                setTimeout(() => copyBtn.textContent = 'Copy Address', 1500);
+                            });
+                        }
+                    });
+                }
+            });
+        }
+
+        // Initialize
+        (function initBranchesUI() {
+            renderRegionSelectors();
+            // default to first region
+            renderBranchCards(regions[0].id);
         })();
     </script>
 </body>
