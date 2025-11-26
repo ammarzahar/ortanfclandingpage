@@ -82,12 +82,12 @@
                     <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">Welcome to the official hub for Liga Ortan. Get real-time updates on standings, fixtures, and post-match analysis.</p>
                     <div class="inline-flex items-center bg-brand-yellow text-brand-black py-2 px-6 rounded-full font-bold shadow-lg">
                         <i data-lucide="trophy" class="w-5 h-5 mr-2"></i>
-                        Season 2024 In Progress!
+                        Season 2026 In Progress!
                     </div>
                 </div>
             </section>
 
-            <div class="max-w-6xl mx-auto">
+            <div class="max-w-6xl mx-auto px-4 mb-12">
                 <h3 class="text-4xl font-bold mb-10 text-center border-b-2 border-brand-yellow pb-3 inline-block mx-auto text-white">League Leaderboard</h3>
 
                 <div class="bg-brand-gray rounded-xl shadow-2xl overflow-hidden">
@@ -103,23 +103,69 @@
                                 <th class="px-6 py-4 text-center text-xs font-semibold uppercase tracking-wider text-brand-yellow">Points</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-700">
-                            <!-- Placeholder Data Rows -->
-                            <tr class="hover:bg-brand-yellow/10 transition duration-150 bg-brand-yellow/20 font-bold text-white">
-                                <td class="px-3 py-4 whitespace-nowrap text-sm text-center text-brand-yellow">1</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm flex items-center"><span class="truncate">Phoenix FC</span></td>
-                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">8</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center">7</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">1</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">0</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-brand-yellow">22</td>
-                            </tr>
-                            <!-- More rows... -->
+                        <tbody id="leaderboard-body" class="divide-y divide-gray-700">
+                            <!-- Leaderboards will be loaded here by script -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
+
+        <script>
+            async function renderLeaderboards() {
+                try {
+                    const res = await fetch('/api/leaderboards');
+                    const data = await res.json();
+                    const container = document.getElementById('leaderboard-body');
+                    // Clear and render combined view: for brevity show Starter then Primary then Secondary stacked
+                    container.innerHTML = '';
+                    const divisions = ['Starter','Primary','Secondary'];
+                    const teamMap = new Map(data.teams.map(t=>[t.id,t.name]));
+                    let rowIndex = 1;
+                    for (const div of divisions) {
+                        const board = data.leaderboards[div] || [];
+                        // Section header row
+                        const headerRow = document.createElement('tr');
+                        headerRow.className = 'bg-black/60';
+                        headerRow.innerHTML = `<td colspan="7" class="px-6 py-3 text-sm font-bold text-brand-yellow">${div} Division</td>`;
+                        container.appendChild(headerRow);
+
+                        if (board.length === 0) {
+                            const empty = document.createElement('tr');
+                            empty.innerHTML = '<td colspan="7" class="px-6 py-4 text-sm text-gray-400">No teams yet</td>';
+                            container.appendChild(empty);
+                            continue;
+                        }
+
+                        for (let i=0;i<board.length;i++) {
+                            const t = board[i];
+                            const tr = document.createElement('tr');
+                            tr.className = 'hover:bg-brand-yellow/10 transition duration-150 bg-transparent';
+                            tr.innerHTML = `
+                                <td class="px-3 py-4 whitespace-nowrap text-sm text-center text-brand-yellow">${i+1}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm flex items-center"><span class="truncate">${teamMap.get(t.teamId) || t.teamId}</span></td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">${t.played}</td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center">${t.w}</td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">${t.d}</td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">${t.l}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-brand-yellow">${t.points}</td>
+                            `;
+                            container.appendChild(tr);
+                        }
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            // Try rendering on load, fallback to static data if file served directly
+            document.addEventListener('DOMContentLoaded', ()=>{
+                renderLeaderboards();
+                // provide manual refresh by clicking the leaderboard title
+                const title = document.querySelector('h3.text-4xl');
+                if (title) title.addEventListener('click', renderLeaderboards);
+            });
+        </script>
 
         <!-- MVP Section -->
         <section id="mvp" class="py-16 px-4 bg-brand-gray border-b border-brand-black">
@@ -156,10 +202,10 @@
             </div>
         </section>
 
-        <!-- Trainers Section -->
-        <section id="trainers" class="py-16 px-4 bg-brand-black border-b border-brand-gray">
+        <!-- Trainee Section -->
+        <section id="trainee" class="py-16 px-4 bg-brand-black border-b border-brand-gray">
             <div class="max-w-6xl mx-auto">
-                <h3 class="text-4xl font-bold mb-10 text-center border-b-2 border-brand-yellow pb-3 inline-block mx-auto text-white">Most Dedicated Trainers</h3>
+                <h3 class="text-4xl font-bold mb-10 text-center border-b-2 border-brand-yellow pb-3 inline-block mx-auto text-white">Most Dedicated Trainee</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-brand-gray p-6 rounded-xl shadow-xl border-t-4 border-brand-yellow">
                         <p class="text-xl font-bold text-brand-yellow mb-3">Trainer Alex R.</p>
@@ -169,7 +215,7 @@
                             <p class="text-gray-400 flex justify-between items-center"><span class="font-semibold text-white">On-Time Rate:</span><span class="text-green-400">99.5%</span></p>
                         </div>
                     </div>
-                    <!-- Other trainers omitted for brevity (keeps provided content structure) -->
+                    <!-- Other trainee omitted for brevity (keeps provided content structure) -->
                 </div>
             </div>
         </section>

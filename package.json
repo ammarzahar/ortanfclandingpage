@@ -1,0 +1,13 @@
+{
+  "name": "ortan-league-server",
+  "version": "1.0.0",
+  "description": "Small local server to serve leaderboards and accept result posts for Liga Ortan",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
