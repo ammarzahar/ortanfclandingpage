@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga Ortan - Official League Landing Page</title>
+    <meta name="description" content="Latest news, match results and announcements from Liga Ortan.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts (match index.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Saira:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Gefika';
+            src: url('fonts/Gefika.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body { font-family: 'Gefika', 'Saira', sans-serif; }
+
+        /* Custom Scrollbar (consistent with index) */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #D4A017; border-radius: 4px; }
+    </style>
+
+    <script>
+        // Tailwind config matching `index.html` brand colors and fonts
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': { yellow: '#D4A017', black: '#000000', gray: '#1a1a1a' }
+                    },
+                    fontFamily: {
+                        sans: ['Garet', 'Outfit', 'sans-serif'],
+                        display: ['Gefika', 'Saira', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="icon" href="images/LogoOrtan.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#000000">
+</head>
+<body class="bg-brand-black text-white antialiased">
+
+    <!-- Main Navigation/Header -->
+    <!-- header removed as requested -->
+
+    <style>
+        @font-face {
+            font-family: 'Gefika';
+            src: url('fonts/Gefika.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Body uses site sans (same as index.html). Gefika reserved for headings H1/H2/H3 */
+        body { font-family: 'Garet', 'Outfit', 'sans-serif'; }
+        h1, h2, h3 { font-family: 'Gefika', 'Saira', sans-serif; }
+
+        /* Custom Scrollbar (consistent with index) */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #D4A017; border-radius: 4px; }
+    </style>
+            <!-- Hero Section -->
+            <section class="bg-brand-black py-16 px-4 text-center border-b border-brand-gray">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-5xl md:text-7xl font-black mb-4 leading-tight">The <span class="text-brand-yellow">Ortan</span> Arena Awaits.</h2>
+                    <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">Welcome to the official hub for Liga Ortan. Get real-time updates on standings, fixtures, and post-match analysis.</p>
+                    <div class="inline-flex items-center bg-brand-yellow text-brand-black py-2 px-6 rounded-full font-bold shadow-lg">
+                        <i data-lucide="trophy" class="w-5 h-5 mr-2"></i>
+                        Season 2024 In Progress!
+                    </div>
+                </div>
+            </section>
+
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold mb-10 text-center border-b-2 border-brand-yellow pb-3 inline-block mx-auto text-white">League Leaderboard</h3>
+
+                <div class="bg-brand-gray rounded-xl shadow-2xl overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-700">
+                        <thead class="bg-black/50">
+                            <tr>
+                                <th class="px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-brand-yellow">#</th>
+                                <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-white">Team</th>
+                                <th class="px-2 py-4 text-center text-xs font-semibold uppercase tracking-wider text-white hidden sm:table-cell">Played</th>
+                                <th class="px-2 py-4 text-center text-xs font-semibold uppercase tracking-wider text-white">W</th>
+                                <th class="px-2 py-4 text-center text-xs font-semibold uppercase tracking-wider text-white hidden sm:table-cell">D</th>
+                                <th class="px-2 py-4 text-center text-xs font-semibold uppercase tracking-wider text-white hidden sm:table-cell">L</th>
+                                <th class="px-6 py-4 text-center text-xs font-semibold uppercase tracking-wider text-brand-yellow">Points</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <!-- Placeholder Data Rows -->
+                            <tr class="hover:bg-brand-yellow/10 transition duration-150 bg-brand-yellow/20 font-bold text-white">
+                                <td class="px-3 py-4 whitespace-nowrap text-sm text-center text-brand-yellow">1</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm flex items-center"><span class="truncate">Phoenix FC</span></td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">8</td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center">7</td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">1</td>
+                                <td class="px-2 py-4 whitespace-nowrap text-sm text-center hidden sm:table-cell">0</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-brand-yellow">22</td>
+                            </tr>
+                            <!-- More rows... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- MVP Section -->
+        <section id="mvp" class="py-16 px-4 bg-brand-gray border-b border-brand-black">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold mb-10 text-center border-b-2 border-brand-yellow pb-3 inline-block mx-auto text-white">Season MVP Standouts</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-brand-black p-8 rounded-xl shadow-2xl border-l-4 border-brand-yellow">
+                        <p class="text-2xl font-black text-brand-yellow mb-4 uppercase">Primary Category MVP</p>
+                        <div class="flex items-center space-x-4">
+                            <img src="https://placehold.co/80x80/D4A017/0f0f0f?text=P+M" alt="Primary MVP Photo" class="w-20 h-20 rounded-full object-cover border-4 border-brand-yellow"/>
+                            <div>
+                                <p class="text-2xl font-bold text-white">Ali Bin Ahmad</p>
+                                <p class="text-gray-400">Team: Phoenix FC | Goals: 15</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mt-4 text-sm">A dominating force in the Primary Division, known for exceptional midfield control and a high scoring record this season.</p>
+                    </div>
+
+                    <div class="bg-brand-black p-8 rounded-xl shadow-2xl border-l-4 border-white">
+                        <p class="text-2xl font-black text-white mb-4 uppercase">Secondary Category MVP</p>
+                        <div class="flex items-center space-x-4">
+                            <img src="https://placehold.co/80x80/ffffff/0f0f0f?text=S+M" alt="Secondary MVP Photo" class="w-20 h-20 rounded-full object-cover border-4 border-white"/>
+                            <div>
+                                <p class="text-2xl font-bold text-white">Chen Wei Lim</p>
+                                <p class="text-gray-400">Team: Rapid Raiders | Assists: 10</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mt-4 text-sm">The backbone of Rapid Raiders, providing crucial defensive stability and leading the league in assists.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="#" class="inline-flex items-center text-sm text-brand-yellow hover:underline font-medium">View Full MVP History<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trainers Section -->
+        <section id="trainers" class="py-16 px-4 bg-brand-black border-b border-brand-gray">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold mb-10 text-center border-b-2 border-brand-yellow pb-3 inline-block mx-auto text-white">Most Dedicated Trainers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-brand-gray p-6 rounded-xl shadow-xl border-t-4 border-brand-yellow">
+                        <p class="text-xl font-bold text-brand-yellow mb-3">Trainer Alex R.</p>
+                        <div class="flex items-center space-x-3"><i data-lucide="award" class="w-6 h-6 text-white"></i><p class="text-white text-lg">Lead Coach</p></div>
+                        <div class="mt-4 space-y-2 text-sm">
+                            <p class="text-gray-400 flex justify-between items-center"><span class="font-semibold text-white">Total Sessions:</span><span class="text-brand-yellow">98/100</span></p>
+                            <p class="text-gray-400 flex justify-between items-center"><span class="font-semibold text-white">On-Time Rate:</span><span class="text-green-400">99.5%</span></p>
+                        </div>
+                    </div>
+                    <!-- Other trainers omitted for brevity (keeps provided content structure) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Fixtures & Results -->
+        <section class="py-16 px-4 bg-brand-gray border-t border-brand-black">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div id="fixtures">
+                    <h3 class="text-3xl font-bold mb-8 text-white flex items-center"><i data-lucide="calendar" class="w-6 h-6 mr-3 text-brand-yellow"></i>Upcoming Fixtures</h3>
+                    <div class="space-y-6">
+                        <div class="bg-brand-black p-6 rounded-xl shadow-lg border border-gray-700">
+                            <p class="text-sm font-medium text-brand-yellow mb-2">SAT, 10 AUG 2024 | 8:00 PM</p>
+                            <div class="flex justify-between items-center text-lg font-semibold"><span>Phoenix FC</span><span class="text-gray-400 mx-4">vs</span><span>The Spartans</span></div>
+                            <p class="text-xs text-gray-500 mt-2">Venue: Ortan Training Ground 1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="results">
+                    <h3 class="text-3xl font-bold mb-8 text-white flex items-center"><i data-lucide="check-circle" class="w-6 h-6 mr-3 text-brand-yellow"></i>Latest Match Results</h3>
+                    <div class="space-y-6">
+                        <div class="bg-brand-black p-6 rounded-xl shadow-lg border border-gray-700">
+                            <p class="text-sm font-medium text-gray-400 mb-2">Final Score | JUL 27</p>
+                            <div class="flex justify-between items-center text-lg font-bold"><span>Phoenix FC</span><span class="text-2xl font-black text-brand-yellow mx-4">3 - 1</span><span>Black Hawks</span></div>
+                            <p class="text-xs text-green-400 mt-2">Win for Phoenix FC, extending their lead!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="py-16 px-4 bg-brand-black">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold mb-10 text-center border-b-2 border-brand-yellow pb-3 inline-block mx-auto text-white">Matchday Gallery</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="relative group overflow-hidden rounded-lg shadow-xl">
+                        <img src="https://placehold.co/400x300/1a1a1a/D4A017?text=Matchday+1" alt="Matchday 1 Action" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="handleDownload('matchday_1_ortan.jpg')" class="bg-brand-yellow text-brand-black font-bold py-2 px-4 rounded-full shadow-lg">Download HD</button>
+                        </div>
+                    </div>
+                </div>
+                <p id="download-message" class="text-center mt-6 text-green-400 font-medium hidden"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black py-8 px-4 text-gray-500 border-t border-brand-gray">
+        <div class="max-w-7xl mx-auto text-center text-sm">
+            <p>&copy; <span id="year">2025</span> Liga Ortan. All rights reserved. | Powered by Ortan Players.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="#" class="hover:text-brand-yellow transition duration-200">Privacy Policy</a>
+                <span class="text-gray-700">|</span>
+                <a href="#" class="hover:text-brand-yellow transition duration-200">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function handleDownload(filename) {
+            const msgElement = document.getElementById('download-message');
+            msgElement.textContent = `Preparing download for: ${filename}. (Simulated download link created).`;
+            msgElement.classList.remove('hidden');
+            setTimeout(() => { msgElement.classList.add('hidden'); msgElement.textContent = ''; }, 3000);
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                console.log('Navigation links are available for scrolling!');
+            });
+        }
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
