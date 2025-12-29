@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortan FC | Malaysia's Premier Youth Football Academy</title>
+    <meta name="description"
+        content="Join Ortan FC, the leading football academy in Malaysia with 25 branches. Training for kids aged 4-16. Register today!">
+
+    <!-- Open Graph / Social Share -->
+    <meta property="og:title" content="Ortan FC | Malaysia's Premier Youth Football Academy">
+    <meta property="og:description"
+        content="Join Ortan FC, the leading football academy in Malaysia with more than 30 branches. Training for kids aged 4-16. Register today!">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ortan FC">
+    <meta property="og:url" content="https://ortan.my/">
+    <meta property="og:image" content="https://ortan.my/../images/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kids playing football at Ortan FC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ortan FC | Malaysia's Premier Youth Football Academy">
+    <meta name="twitter:description"
+        content="Join Ortan FC, the leading football academy in Malaysia with 25 branches. Training for kids aged 4-16. Register today!">
+    <meta name="twitter:image" content="https://ortan.my/../images/og-image.jpg">
+    <meta name="twitter:image:alt" content="Kids playing football at Ortan FC">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://ortan.my/">
+
+    <!-- Favicons -->
+    <link rel="icon" href="../images/LogoOrtan.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../images/LogoOrtan.svg">
+    <link rel="apple-touch-icon" href="../images/LogoOrtan.svg">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <!-- Importing Saira (match for Gefika's sporty vibe) and Outfit (match for Garet's geometric vibe) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Saira:wght@400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet CSS (map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-sA+e2Yk3bP3yYhX8Z6b0s3sF3qkR5Zr2v+v+0i0S0Dk=" crossorigin="" />
+
+    <!-- Markdown Parser for AI responses -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#D4A017', // Dark Yellow
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: '#1a1a1a'
+                        }
+                    },
+                    fontFamily: {
+                        // 'Outfit' is the fallback for 'Garet'
+                        sans: ['Garet', 'Outfit', 'sans-serif'],
+                        // 'Saira' is the fallback for 'Gefika'
+                        display: ['Gefika', 'Saira', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'Gefika';
+            src: url('../fonts/Gefika.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D4A017;
+            border-radius: 5px;
+        }
+
+        /* Hero Overlay Gradient */
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%);
+        }
+
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Markdown Styles for AI Output */
+        .prose-invert strong {
+            color: #D4A017;
+        }
+
+        .prose-invert ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prose-invert ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prose-invert h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .prose-invert p {
+            margin-bottom: 0.75rem;
+            color: #d1d5db;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-black/95 backdrop-blur-sm border-b border-brand-yellow/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="../images/LogoOrtan.svg" alt="Ortan FC Logo"
+                        class="h-10 w-auto hover:scale-105 transition transform duration-300">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="../index.html"
+                            class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Home</a>
+                        <a href="#benefits"
+                            class="text-white hover:text-brand-yellow px-3 py-2 font-semibold transition">Benefits</a>
+                        <a href="#partner-form"
+                            class="bg-brand-yellow text-brand-black px-6 py-2 rounded-full font-bold hover:bg-white hover:text-brand-black transition transform hover:scale-105">PARTNER
+                            WITH US</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button onclick="toggleMenu()"
+                        class="text-white hover:text-brand-yellow inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-black border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="../index.html"
+                    class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Home</a>
+                <a href="#benefits" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-brand-yellow block px-3 py-2 font-bold text-lg">Benefits</a>
+                <a href="#partner-form" onclick="toggleMenu()"
+                    class="bg-brand-yellow text-brand-black block px-3 py-3 rounded-md font-bold text-lg mt-4">PARTNER
+                    WITH US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-start">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="../images/DSC_1985.jpg" alt="Kids playing football" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16">
+            <div class="md:w-2/3 lg:w-1/2">
+                <div
+                    class="inline-block bg-brand-yellow text-brand-black font-bold px-4 py-1 rounded-sm mb-4 uppercase tracking-wider text-sm">
+                    #1 Football Academy Franchise Opportunity
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-6 uppercase">
+                    Own a <br><span class="text-brand-yellow">Football Academy</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 font-light">
+                    Join Malaysia's fastest growing grassroots football network. Turn your passion for football into a
+                    profitable business.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#partner-form"
+                        class="bg-brand-yellow text-brand-black px-8 py-4 rounded font-bold text-lg text-center hover:bg-white transition transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        Inquire Now<br>
+                    </a>
+                </div>
+
+                <div class="mt-12 flex items-center gap-8 text-white/80">
+                    <div>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">30+</span>
+                        <span class="text-sm uppercase font-sans">Branches</span>
+                    </div>
+                    <div class="w-px h-10 bg-gray-500"></div>
+                    <div>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">500+</span>
+                        <span class="text-sm uppercase font-sans">Players</span>
+                    </div>
+                    <div class="w-px h-10 bg-gray-500"></div>
+                    <div>
+                        <span class="block text-3xl font-display font-bold text-brand-yellow">4-16</span>
+                        <span class="text-sm uppercase font-sans">Ages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Franchise (Benefits) -->
+    <section id="benefits" class="py-20 bg-brand-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">Why <span
+                        class="text-brand-yellow">Partner</span> With Us?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">We provide the roadmap, curriculum, and brand. You provide
+                    the leadership.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-brand-gray p-8 rounded-lg border-l-4 border-brand-yellow hover:bg-gray-800 transition group">
+                    <div
+                        class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-chart-line text-2xl text-brand-yellow group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">Proven Model</h3>
+                    <p class="text-gray-400">Leverage our successful business model that has scaled to over 30 branches
+                        nationwide. We know what works.</p>
+                </div>
+                <div
+                    class="bg-brand-gray p-8 rounded-lg border-l-4 border-brand-yellow hover:bg-gray-800 transition group">
+                    <div
+                        class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-book-open text-2xl text-brand-yellow group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">Full Support</h3>
+                    <p class="text-gray-400">Access our comprehensive coaching curriculum, marketing materials, and
+                        operational SOPs.</p>
+                </div>
+                <div
+                    class="bg-brand-gray p-8 rounded-lg border-l-4 border-brand-yellow hover:bg-gray-800 transition group">
+                    <div
+                        class="w-14 h-14 bg-brand-yellow/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-award text-2xl text-brand-yellow group-hover:text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold mb-3 uppercase">Strong Brand</h3>
+                    <p class="text-gray-400">Join a recognized brand in Malaysian grassroots football. Benefit from our
+                        national leagues and tournaments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Inquiry Form -->
+    <section id="partner-form" class="py-20 bg-gray-100 relative">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div class="bg-brand-yellow p-8 text-center">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-black mb-2 uppercase">Start Your
+                        Journey</h2>
+                    <p class="text-brand-black font-semibold opacity-90">Fill out the form below to connect with us
+                        directly on WhatsApp.</p>
+                </div>
+                <div class="p-8 md:p-12">
+                    <form onsubmit="submitPartnerForm(event)" class="space-y-6">
+                        <div>
+                            <label for="p-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="p-name"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow outline-none transition"
+                                placeholder="Your Name" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="p-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number
+                                    (WhatsApp)</label>
+                                <input type="tel" id="p-phone"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow outline-none transition"
+                                    placeholder="+60 12 345 6789" required>
+                            </div>
+                            <div>
+                                <label for="p-location" class="block text-sm font-medium text-gray-700 mb-1">Proposed
+                                    Location</label>
+                                <input type="text" id="p-location"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-yellow focus:border-brand-yellow outline-none transition"
+                                    placeholder="e.g. Shah Alam, Bangi" required>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full bg-brand-black text-white font-bold text-xl py-4 rounded-lg hover:bg-gray-800 transition transform hover:-translate-y-1 shadow-lg flex justify-center items-center gap-2">
+                                <span>INQUIRE VIA WHATSAPP</span>
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                            </button>
+                            <p class="text-xs text-center text-gray-500 mt-4">By clicking above, you will be redirected
+                                to WhatsApp to send your inquiry directly to our franchise team.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-white pt-12 pb-6 border-t border-brand-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="../images/LogoOrtan.svg" alt="Ortan FC Logo" class="h-8 w-auto mb-4">
+                    <p class="text-gray-400 mt-4 text-sm leading-relaxed max-w-xs">
+                        Malaysia's fastest-growing grassroots football network. Developing people, creating players.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-yellow mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#programs" class="hover:text-white">Programs</a></li>
+                        <li><a href="#branches" class="hover:text-white">Locations</a></li>
+                        <li><a href="#fees" class="hover:text-white">Fees</a></li>
+                        <li><a href="#register" class="hover:text-white">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-yellow mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +60 10-3221678</li>
+                        <li><i class="fas fa-envelope mr-2"></i> &nbsp;ortanhq@gmail.com</li>
+                        <li class="flex space-x-4 mt-4 text-xl">
+                            <a href="https://www.facebook.com/ortanfc/" class="hover:text-brand-yellow"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/ortanfc" class="hover:text-brand-yellow"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@ortanfc" class="hover:text-brand-yellow"><i
+                                    class="fab fa-tiktok"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+                &copy; <span id="year"></span> Ortan FC Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Partner Form Logic
+        function submitPartnerForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('p-name').value;
+            const phone = document.getElementById('p-phone').value;
+            const location = document.getElementById('p-location').value;
+
+            if (!name || !phone || !location) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            const text = `Hi, I am ${name}. I am interested in opening an Ortan FC branch in ${location}. My phone number is ${phone}.`;
+            const encodedText = encodeURIComponent(text);
+            const url = `https://wa.me/60175715228?text=${encodedText}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
